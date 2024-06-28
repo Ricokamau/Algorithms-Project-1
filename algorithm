@@ -1,0 +1,23 @@
+let sentence = prompt("Enter a sentence ending with a period:");
+
+let charCount = 0;
+let wordCount = 1; // Start with 1 since the last word doesn't end with a space
+let vowelCount = 0;
+
+const vowels = new Set(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']);
+
+for (let i = 0; i < sentence.length; i++) {
+  charCount++;
+
+  if (sentence[i] === ' ' && i !== sentence.length - 1) {
+    wordCount++;
+  }
+
+  if (vowels.has(sentence[i])) {
+    vowelCount++;
+  }
+}
+
+alert(`Length of the sentence: ${charCount - 1} (excluding the period)
+Number of words: ${wordCount}
+Number of vowels: ${vowelCount}`);
